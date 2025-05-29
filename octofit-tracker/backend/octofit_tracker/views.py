@@ -12,11 +12,8 @@ def api_root(request, format=None):
     if request.method == 'POST':
         return Response({"message": "POST request received"}, status=status.HTTP_201_CREATED)
 
-    # Get the current request's host and scheme to build dynamic URLs
-    if request:
-        base_url = f"{request.scheme}://{request.get_host()}/"
-    else:
-        base_url = 'http://localhost:8000/'
+    # Use the specific codespace URL for API endpoints
+    base_url = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/'
     
     return Response({
         'users': base_url + 'api/users/?format=api',
