@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [filterBy, setFilterBy] = useState('all');
 
   // Use specific codespace Django REST API endpoint
-  const API_BASE_URL = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/api';
+  const API_BASE_URL = 'https://refactored-barnacle-rp5wv77qgxr24pw-8000.app.github.dev/api/leaderboard';
 
   useEffect(() => {
     fetchLeaderboard();
@@ -17,7 +17,7 @@ const Leaderboard = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/leaderboard/`);
+      const response = await fetch(API_BASE_URL);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

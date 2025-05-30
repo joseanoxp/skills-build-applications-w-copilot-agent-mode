@@ -12,7 +12,7 @@ const Teams = () => {
   });
 
   // Use specific codespace Django REST API endpoint
-  const API_BASE_URL = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/api';
+  const API_BASE_URL = 'https://refactored-barnacle-rp5wv77qgxr24pw-8000.app.github.dev/api/teams';
 
   useEffect(() => {
     fetchTeams();
@@ -21,7 +21,7 @@ const Teams = () => {
   const fetchTeams = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/teams/`);
+      const response = await fetch(API_BASE_URL);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

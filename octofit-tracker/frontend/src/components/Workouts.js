@@ -14,7 +14,7 @@ const Workouts = () => {
   });
 
   // Use specific codespace Django REST API endpoint
-  const API_BASE_URL = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/api';
+  const API_BASE_URL = 'https://refactored-barnacle-rp5wv77qgxr24pw-8000.app.github.dev/api/workouts';
 
   useEffect(() => {
     fetchWorkouts();
@@ -23,7 +23,7 @@ const Workouts = () => {
   const fetchWorkouts = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/workouts/`);
+      const response = await fetch(API_BASE_URL);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

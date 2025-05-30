@@ -12,7 +12,7 @@ const Activities = () => {
   });
 
   // Use specific codespace Django REST API endpoint
-  const API_BASE_URL = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/api';
+  const API_BASE_URL = 'https://refactored-barnacle-rp5wv77qgxr24pw-8000.app.github.dev/api/activities';
 
   useEffect(() => {
     fetchActivities();
@@ -22,9 +22,9 @@ const Activities = () => {
     try {
       setLoading(true);
       setError(null);
-      console.log('Fetching activities from:', `${API_BASE_URL}/activities/`);
+      console.log('Fetching activities from:', API_BASE_URL);
       
-      const response = await fetch(`${API_BASE_URL}/activities/`, {
+      const response = await fetch(API_BASE_URL, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
