@@ -11,7 +11,8 @@ const Activities = () => {
     description: ''
   });
 
-  const API_BASE_URL = 'https://legendary-spoon-7pjw4776r5xfp7q5-8000.app.github.dev/api';
+  // Use dynamic codespace URL
+  const API_BASE_URL = `https://${window.location.hostname.replace('3000', '8000')}/api`;
 
   useEffect(() => {
     fetchActivities();
